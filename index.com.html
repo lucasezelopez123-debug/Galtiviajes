@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GALTI VIAJES</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--t:#30CCAE;--p:#01938E;--pd:#016a67;--bg:#fff;--bg2:#f1fbf9;--tx:#0d2f2e;--mu:#4c6b69;--bd:#cfe9e5;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#07201f;--bg2:#0b2c2b;--tx:#eafaf7;--mu:#9cc4bf;--bd:#14504d}}
+:root[data-theme="dark"]{--bg:#07201f;--bg2:#0b2c2b;--tx:#eafaf7;--mu:#9cc4bf;--bd:#14504d}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Poppins,system-ui,sans-serif}
+a{color:inherit}.w{max-width:1100px;margin:auto;padding:0 18px}
+nav{position:sticky;top:0;z-index:20;background:var(--p);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;gap:12px;flex-wrap:wrap}
+nav b{font-size:20px;letter-spacing:2px}nav b span{color:var(--t)}
+nav div a{margin-left:14px;text-decoration:none;font-size:14px;font-weight:600}
+.btn{display:inline-block;border:0;border-radius:99px;padding:11px 22px;font:600 13px Poppins;letter-spacing:.5px;cursor:pointer;text-decoration:none;background:var(--t);color:#04302d;transition:.2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.07)}.btn.o{background:transparent;border:2px solid #fff;color:#fff}
+.btn.d{background:var(--p);color:#fff}.btn.s{padding:7px 14px;font-size:12px}.btn.r{background:#c0392b;color:#fff}
+.hero{min-height:84vh;display:flex;align-items:center;color:#fff;background:linear-gradient(120deg,rgba(1,147,142,.82),rgba(48,204,174,.45)),var(--himg,linear-gradient(135deg,#01938E,#30CCAE)) center/cover}
+.hero h1{font-size:clamp(30px,6vw,60px);font-weight:800;line-height:1.1;margin:0 0 14px;max-width:760px;animation:up .8s both}
+.hero p{font-size:18px;max-width:560px;margin:0 0 26px;animation:up .8s .15s both}.hero .btn{margin:0 10px 10px 0;animation:up .8s .3s both}
+@keyframes up{from{opacity:0;transform:translateY(20px)}}
+section{padding:56px 0}h2{font-size:clamp(24px,4vw,36px);margin:0 0 6px;color:var(--p)}.sub{color:var(--mu);margin:0 0 24px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}.tabs button{border:2px solid var(--p);background:none;color:var(--p);border-radius:99px;padding:8px 18px;font:600 13px Poppins;cursor:pointer}
+.tabs button.on{background:var(--p);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.card{background:var(--bg2);border:1px solid var(--bd);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:.25s}.card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(1,147,142,.18)}
+.ph{height:170px;background:linear-gradient(135deg,var(--p),var(--t)) center/cover;display:flex;align-items:flex-end;padding:12px;color:#fff;font-weight:700;font-size:20px}
+.cb{padding:14px;display:flex;flex-direction:column;gap:10px;flex:1}.cb p{margin:0;color:var(--mu);font-size:14px;flex:1}.row{display:flex;gap:8px;flex-wrap:wrap}
+#ya{background:linear-gradient(135deg,var(--pd),var(--p));color:#fff}#ya h2{color:#fff}#ya .sub{color:#d6fff6}
+.of{background:#fff;color:#0d2f2e;border:3px solid var(--t);border-radius:18px;overflow:hidden;position:relative}
+.of .ph{height:190px}.cd{position:absolute;top:10px;right:10px;background:#0d2f2e;color:var(--t);font:700 15px monospace;padding:6px 12px;border-radius:99px;animation:pl 1.6s infinite}
+@keyframes pl{50%{box-shadow:0 0 0 6px rgba(48,204,174,.45)}}
+.pr{font-size:28px;font-weight:800;color:var(--p)}.of ul{margin:0;padding-left:18px;font-size:13px}
+.ex{opacity:.6;filter:grayscale(1)}.empty{padding:26px;text-align:center;color:var(--mu);border:2px dashed var(--bd);border-radius:16px}
+#ya .empty{color:#d6fff6;border-color:#30CCAE}
+.ct{display:grid;grid-template-columns:1fr 1fr;gap:26px}@media(max-width:720px){.ct{grid-template-columns:1fr}nav div{display:none}}
+input,textarea,select{width:100%;padding:10px 12px;border:1px solid var(--bd);border-radius:10px;font:14px Poppins;background:var(--bg);color:var(--tx);margin-bottom:8px}
+label{font-size:12px;font-weight:600;color:var(--mu);display:block}
+footer{background:var(--pd);color:#fff;text-align:center;padding:24px;font-size:14px}
+#adm{display:none;position:fixed;inset:0;z-index:50;background:var(--bg);overflow:auto;padding:18px}
+#adm.on{display:block}.pn{background:var(--bg2);border:1px solid var(--bd);border-radius:14px;padding:14px;margin-bottom:12px}
+.f2{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0 12px}
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;display:none}
+.tag{font-size:11px;background:var(--t);color:#04302d;border-radius:99px;padding:2px 10px;font-weight:700}
+:root{--cl:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200' viewBox='0 0 600 200'%3E%3Cg fill='white' fill-opacity='.6'%3E%3Cellipse cx='120' cy='140' rx='110' ry='38'/%3E%3Cellipse cx='190' cy='108' rx='70' ry='45'/%3E%3Cellipse cx='265' cy='140' rx='90' ry='36'/%3E%3Cellipse cx='450' cy='95' rx='90' ry='28'/%3E%3Cellipse cx='500' cy='72' rx='48' ry='32'/%3E%3Cellipse cx='540' cy='98' rx='55' ry='26'/%3E%3C/g%3E%3C/svg%3E")}
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(1,100,110,.55),rgba(48,204,174,.25) 70%,rgba(1,147,142,.55)),var(--himg,linear-gradient(180deg,#0a7f8c,#30CCAE 65%,#c6f7ee))!important;background-size:cover!important;background-position:center!important}
+.hero::before{content:'';position:absolute;inset:0;background:var(--cl) repeat-x 0 82%/900px,var(--cl) repeat-x 300px 14%/1300px,var(--cl) repeat-x 0 48%/700px;opacity:.85;animation:dr 70s linear infinite}
+@keyframes dr{to{background-position:-900px 82%,1000px 14%,-700px 48%}}
+.hero>.w{position:relative;z-index:2}.hero h1{text-shadow:0 4px 24px rgba(0,60,60,.35)}
+.plane{position:absolute;z-index:1;width:78px;top:26%;left:-120px;opacity:.95;filter:drop-shadow(0 6px 10px rgba(0,60,60,.3));animation:fly 20s linear infinite}
+@keyframes fly{to{left:112%;top:10%}}
+#destinos{background:var(--cl) no-repeat right -60px top 10px/520px,linear-gradient(180deg,var(--bg),var(--bg2))}
+#ya{position:relative;overflow:hidden;background:var(--cl) repeat-x 0 100%/800px,var(--cl) no-repeat 8% 6%/420px,linear-gradient(135deg,var(--pd),var(--p))}
+#ya .w{position:relative}
+#contacto{background:var(--cl) no-repeat left -80px bottom 0/560px,linear-gradient(180deg,var(--bg2),var(--bg))}
+footer{background:var(--cl) repeat-x 0 0/700px,var(--pd)}
+@media(prefers-reduced-motion:reduce){.hero::before,.plane{animation:none}}
+:root{--cl:none}.hero::before,.plane{display:none}
+.hero{background:linear-gradient(135deg,rgba(1,147,142,.92),rgba(48,204,174,.7)),var(--himg,linear-gradient(135deg,#01938E,#30CCAE))!important;background-size:cover!important;background-position:center!important}
+.tabs button{text-transform:uppercase;letter-spacing:.5px}
+</style></head><body>
+<nav><b>GALTI<span> VIAJES</span></b><div id="menu"><a href="#destinos">Destinos</a><a href="#ya">¡Salen Ya!</a><a href="#contacto">Contacto</a></div></nav>
+<header class="hero" id="hero"><div class="w"><h1 id="hT">EL MUNDO TE ESPERA. NOSOTROS TE LLEVAMOS</h1><p id="hS">Descubrí nuevos destinos, viví experiencias únicas y empezá a planificar tu próximo viaje</p>
+<a class="btn" href="#destinos">EXPLORAR DESTINOS</a><a class="btn o" id="hW" target="_blank" rel="noopener">CONSULTAR POR WHATSAPP</a></div></header>
+<section id="destinos"><div class="w"><h2>Destinos</h2><p class="sub">Elegí tu próxima aventura</p><div class="tabs" id="tabs"></div><div class="grid" id="dg"></div></div></section>
+<div id="extra"></div>
+<section id="ya"><div class="w"><h2>¡SALEN YA!</h2><p class="sub">Oportunidades únicas que duran solo 24 horas</p><div class="grid" id="og"></div><div id="ovw"></div></div></section>
+<section id="contacto"><div class="w ct"><div><h2>Contacto</h2><p class="sub">#CreamosExperiencias</p><p id="cA"></p><p id="cH"></p><div class="row"><a class="btn d" id="cW" target="_blank" rel="noopener">WHATSAPP</a><a class="btn d" id="cI" target="_blank" rel="noopener">INSTAGRAM</a></div></div>
+<div><h2 style="font-size:22px">Escribinos tu consulta</h2><input id="fn" placeholder="Nombre"><input id="ft" placeholder="Teléfono"><textarea id="fm" rows="4" placeholder="¿Qué viaje tenés en mente?"></textarea><button class="btn d" id="fs">ENVIAR POR WHATSAPP</button></div></div></section>
+<footer>GALTI VIAJES – #CreamosExperiencias</footer>
+<button class="btn d fab" id="fab">⚙ ADMINISTRAR</button>
+
+<div id="adm"><div class="w"><div class="row" style="justify-content:space-between;align-items:center"><h2>Panel de administración</h2><button class="btn d s" id="cl">CERRAR</button></div>
+<div class="tabs" id="at"></div><div id="ab"></div></div></div>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var S={cats:[],dest:[],offers:[],cfg:{}},db=null,assets=null,isAdmin=false,cur=null,tab='dest';
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,6)}
+function wa(msg){var n=(S.cfg.wa||'5493572687724').replace(/\D/g,'');return n?'https://wa.me/'+n+'?text='+encodeURIComponent(msg):'#'}
+function bg(u){return u?'background-image:url('+esc(u)+')':''}
+function money(v){return v?'USD '+esc(v):''}
+function norm(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim()}
+function catOf(id){return S.cats.filter(function(c){return c.id==id})[0]}
+function catKey(id){var c=catOf(id);return c?norm(c.name):'?'+id}
+function catName(id){var c=catOf(id);return c?c.name:'Sin categoría'}
+function catOpts(sel){return S.cats.filter(function(x){return x.type!='section'}).map(function(x){return'<option value="'+x.id+'"'+(x.id==sel?' selected':'')+'>'+esc(x.name)+'</option>'}).join('')}
+function fd(s){return s?new Date(s+'T12:00').toLocaleDateString('es-AR',{day:'2-digit',month:'short'}):'-'}
+/* ---- render público ---- */
+function render(){
+ var c=S.cfg;
+ $('hT').textContent=c.heroTitle||'EL MUNDO TE ESPERA. NOSOTROS TE LLEVAMOS';
+ $('hS').textContent=c.heroSub||'Descubrí nuevos destinos, viví experiencias únicas y empezá a planificar tu próximo viaje';
+ if(c.heroImg)$('hero').style.setProperty('--himg','url('+c.heroImg+')');
+ $('hW').href=wa('Hola GALTI VIAJES! Quiero consultar por un viaje.');$('cW').href=$('hW').href;
+ var ig=c.ig||'galtiviajes';$('cI').href=ig.indexOf('http')==0?ig:'https://instagram.com/'+ig.replace('@','');
+ $('cA').textContent=c.addr?'📍 '+c.addr:'';$('cH').textContent=c.hours?'🕒 '+c.hours:'';
+ var cats=S.cats.filter(function(x){return x.on!==false&&x.type!='section'}).sort(function(a,b){return(a.order||0)-(b.order||0)});var seen={};cats=cats.filter(function(x){var k=norm(x.name);if(seen[k])return false;seen[k]=1;return true});
+ if(!cur||(cur!='all'&&!cats.some(function(x){return x.id==cur})))cur='all';
+ $('tabs').innerHTML='<button data-c="all" class="'+(cur=='all'?'on':'')+'">TODOS</button>'+cats.map(function(x){return'<button data-c="'+x.id+'" class="'+(x.id==cur?'on':'')+'">'+esc(x.name)+'</button>'}).join('');
+ var co=function(id){var c=find('cats',id);return c?(c.order||0):999};var ds=S.dest.filter(function(d){return cur=='all'||d.cat==cur||catKey(d.cat)==catKey(cur)}).sort(function(a,b){return cur=='all'&&co(a.cat)!=co(b.cat)?co(a.cat)-co(b.cat):(a.order||0)-(b.order||0)});
+ $('dg').innerHTML=ds.length?ds.map(function(d){return'<div class="card"><div class="ph" style="'+bg(d.img)+'">'+esc(d.name)+'</div><div class="cb"><span class="tag" style="align-self:flex-start">'+esc(catName(d.cat))+'</span><p>'+esc(d.desc)+'</p><div class="row"><a class="btn d s" href="'+wa('Hola! Quiero conocer el destino '+d.name)+'" target="_blank" rel="noopener">CONOCER DESTINO</a><a class="btn s" href="'+wa('Hola! Quiero consultar por '+d.name)+'" target="_blank" rel="noopener">WHATSAPP</a></div></div></div>'}).join(''):'<div class="empty" style="grid-column:1/-1">Pronto vamos a publicar destinos en esta categoría.</div>';
+ $('destinos').style.display=c.showDest===false?'none':'';
+ $('ya').style.display=c.showOffers===false?'none':'';
+ var extra=S.cats.filter(function(x){return x.type=='section'&&x.on!==false});
+ $('extra').innerHTML=extra.map(function(x){return'<section id="s-'+x.id+'"><div class="w"><h2>'+esc(x.name)+'</h2><p class="sub" style="white-space:pre-line">'+esc(x.body||'')+'</p></div></section>'}).join('');
+ var m='<a href="#destinos">Destinos</a><a href="#ya">¡Salen Ya!</a>'+extra.filter(function(x){return x.menu}).map(function(x){return'<a href="#s-'+x.id+'">'+esc(x.name)+'</a>'}).join('')+'<a href="#contacto">Contacto</a>';
+ $('menu').innerHTML=m;
+ tick();if(isAdmin)renderAdm();
+}
+function tick(){
+ var now=Date.now(),live=[],dead=[];
+ S.offers.forEach(function(o){(o.exp>now?live:dead).push(o)});
+ live.sort(function(a,b){return a.exp-b.exp});
+ $('og').innerHTML=live.length?live.map(function(o){var r=o.exp-now,h=Math.floor(r/36e5),mi=Math.floor(r%36e5/6e4),s=Math.floor(r%6e4/1e3),p=function(n){return n<10?'0'+n:n};
+  return'<div class="of"><div class="ph" style="'+bg(o.img)+'">'+esc(o.name)+'</div><span class="cd">'+p(h)+':'+p(mi)+':'+p(s)+'</span><div class="cb"><div class="pr">'+money(o.price)+' <small style="font-size:12px;font-weight:400">por persona</small></div><ul><li>Salida: '+fd(o.out)+' · Regreso: '+fd(o.back)+' ('+esc(o.nights)+' noches)</li>'+(o.air?'<li>Aerolínea: '+esc(o.air)+'</li>':'')+(o.bag?'<li>Equipaje: '+esc(o.bag)+'</li>':'')+(o.hotel?'<li>Hotel: '+esc(o.hotel)+'</li>':'')+'</ul>'+(o.info?'<p style="font-size:13px;margin:0">'+esc(o.info)+'</p>':'')+'<a class="btn d" target="_blank" rel="noopener" href="'+wa('Hola! Quiero esta oferta de SALEN YA: '+o.name+' ('+fd(o.out)+' al '+fd(o.back)+') USD '+o.price)+'">QUIERO ESTA OFERTA</a></div></div>'}).join(''):'<div class="empty" style="grid-column:1/-1">No hay ofertas activas ahora. ¡Volvé pronto o consultanos por WhatsApp!</div>';
+}
+setInterval(function(){if(!document.hidden){tick();}},1000);
+$('tabs').addEventListener('click',function(e){var b=e.target.closest?e.target.closest('button[data-c]'):null;if(b){cur=b.getAttribute('data-c');render()}});
+$('fs').onclick=function(){var t='Hola GALTI VIAJES! Soy '+($('fn').value||'un cliente')+(($('ft').value)?' (tel. '+$('ft').value+')':'')+'. '+$('fm').value;window.open(wa(t),'_blank')};
+/* ---- admin ---- */
+var T={dest:'Destinos',offers:'Salen Ya',cats:'Categorías y secciones',cfg:'Ajustes'};
+function renderAdm(){
+ $('at').innerHTML=Object.keys(T).map(function(k){return'<button data-t="'+k+'" class="'+(k==tab?'on':'')+'">'+T[k]+'</button>'}).join('');
+ var h='';
+ if(tab=='dest'){h='<div class="pn"><b>Nuevo destino</b><div class="f2"><div><label>Categoría</label><select id="dC">'+S.cats.filter(function(x){return x.type!='section'}).map(function(x){return'<option value="'+x.id+'">'+esc(x.name)+'</option>'}).join('')+'</select></div><div><label>Nombre</label><input id="dN"></div><div><label>Orden</label><input id="dO" type="number" value="1"></div></div><label>Descripción breve</label><textarea id="dD" rows="2"></textarea><label>Foto</label><input id="dI" type="file" accept="image/*"><button class="btn d s" id="dS">AGREGAR</button></div>'+
+  S.dest.map(function(d){return'<div class="pn"><b>'+esc(d.name)+'</b> <span class="tag">'+esc((S.cats.filter(function(c){return c.id==d.cat})[0]||{}).name||'?')+'</span><div class="f2"><div><label>Nombre</label><input data-e="dest:'+d.id+':name" value="'+esc(d.name)+'"></div><div><label>Orden</label><input type="number" data-e="dest:'+d.id+':order" value="'+(d.order||0)+'"></div><div><label>Categoría</label><select data-e="dest:'+d.id+':cat">'+catOpts(d.cat)+'</select></div></div><label>Descripción</label><textarea rows="2" data-e="dest:'+d.id+':desc">'+esc(d.desc)+'</textarea><label>Cambiar foto</label><input type="file" accept="image/*" data-p="dest:'+d.id+'"><button class="btn r s" data-x="dest:'+d.id+'">ELIMINAR</button></div>'}).join('')}
+ if(tab=='offers'){var f=[['name','Destino'],['out','Salida','date'],['back','Regreso','date'],['nights','Noches','number'],['air','Aerolínea'],['bag','Equipaje incluido'],['hotel','Hotel y régimen'],['price','Precio por persona (USD)','number']];
+  h='<div class="pn"><b>Nueva cotización (dura 24 h)</b><div class="f2">'+f.map(function(x){return'<div><label>'+x[1]+'</label><input id="o_'+x[0]+'" type="'+(x[2]||'text')+'"></div>'}).join('')+'</div><label>Información adicional</label><textarea id="o_info" rows="2"></textarea><label>Foto</label><input id="o_img" type="file" accept="image/*"><button class="btn d s" id="oS">PUBLICAR AHORA</button></div>'+
+  S.offers.sort(function(a,b){return b.created-a.created}).map(function(o){var live=o.exp>Date.now();return'<div class="pn"><b>'+esc(o.name)+'</b> <span class="tag" style="'+(live?'':'background:#999')+'">'+(live?'ACTIVA':'VENCIDA')+'</span> USD '+esc(o.price)+'<div class="f2"><div><label>Destino</label><input data-e="offers:'+o.id+':name" value="'+esc(o.name)+'"></div><div><label>Precio</label><input data-e="offers:'+o.id+':price" value="'+esc(o.price)+'"></div></div><label>Info</label><textarea rows="2" data-e="offers:'+o.id+':info">'+esc(o.info)+'</textarea><div class="row"><button class="btn d s" data-rn="'+o.id+'">'+(live?'REINICIAR 24 H':'RENOVAR 24 H')+'</button><button class="btn s" data-dp="'+o.id+'">DUPLICAR</button><button class="btn r s" data-x="offers:'+o.id+'">ELIMINAR</button></div></div>'}).join('')}
+ if(tab=='cats'){h='<div class="pn"><b>Nueva categoría de destinos o sección</b><div class="f2"><div><label>Nombre</label><input id="cN"></div><div><label>Tipo</label><select id="cT"><option value="cat">Categoría de destinos</option><option value="section">Sección de contenido (Cruceros, FAQ, Blog…)</option></select></div></div><label>Contenido (solo secciones)</label><textarea id="cB" rows="3"></textarea><label><input type="checkbox" id="cM" style="width:auto"> Mostrar en el menú</label><button class="btn d s" id="cS">CREAR</button></div>'+
+  S.cats.map(function(c){return'<div class="pn"><b>'+esc(c.name)+'</b> <span class="tag">'+(c.type=='section'?'Sección':'Categoría')+'</span><div class="f2"><div><label>Nombre</label><input data-e="cats:'+c.id+':name" value="'+esc(c.name)+'"></div><div><label>Orden</label><input type="number" data-e="cats:'+c.id+':order" value="'+(c.order||0)+'"></div></div>'+(c.type=='section'?'<label>Contenido</label><textarea rows="3" data-e="cats:'+c.id+':body">'+esc(c.body)+'</textarea><label><input type="checkbox" style="width:auto" data-k="cats:'+c.id+':menu" '+(c.menu?'checked':'')+'> En el menú</label>':'')+'<label><input type="checkbox" style="width:auto" data-k="cats:'+c.id+':on" '+(c.on!==false?'checked':'')+'> Visible</label><button class="btn r s" data-x="cats:'+c.id+'">ELIMINAR</button></div>'}).join('')}
+ if(tab=='cfg'){var c=S.cfg;var g=function(k,l,t){return'<label>'+l+'</label>'+(t=='a'?'<textarea rows="2" data-c="'+k+'">'+esc(c[k])+'</textarea>':'<input data-c="'+k+'" value="'+esc(c[k])+'">')};
+  h='<div class="pn">'+g('heroTitle','Título principal')+g('heroSub','Subtítulo','a')+'<label>Foto de portada</label><input type="file" accept="image/*" id="hI"></div><div class="pn">'+g('wa','WhatsApp (con código de país, ej. 5493512345678)')+g('ig','Instagram (usuario o link)')+g('addr','Dirección')+g('hours','Horarios de atención')+'</div><div class="pn"><label><input type="checkbox" style="width:auto" data-s="showDest" '+(c.showDest!==false?'checked':'')+'> Mostrar sección Destinos</label><label><input type="checkbox" style="width:auto" data-s="showOffers" '+(c.showOffers!==false?'checked':'')+'> Mostrar sección ¡Salen Ya!</label></div>'}
+ $('ab').innerHTML=h;
+}
+function up(file){return assets?assets.upload(file).then(function(r){return r.url}):Promise.reject(new Error('Sin almacenamiento'))}
+function save(col,id,d){return db.collection(col).doc(id).set(d)}
+function find(col,id){return S[col].filter(function(x){return x.id==id})[0]}
+function msg(t){var e=document.getElementById('toast');if(!e){e=document.createElement('div');e.id='toast';e.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#0d2f2e;color:#fff;padding:12px 20px;border-radius:12px;z-index:99;font:600 14px Poppins,sans-serif;max-width:90vw;text-align:center';document.body.appendChild(e)}e.textContent=t;e.style.display='block';clearTimeout(e._t);e._t=setTimeout(function(){e.style.display='none'},4000)}
+function err(e){msg('No se pudo guardar: '+(e&&e.message||e))}
+$('at').onclick=function(e){if(e.target.dataset.t){tab=e.target.dataset.t;renderAdm()}};
+$('cl').onclick=function(){$('adm').classList.remove('on')};
+$('fab').onclick=function(){$('adm').classList.add('on');renderAdm()};
+$('ab').addEventListener('change',function(e){var t=e.target,d=t.dataset;
+ var set=function(p,k,v){var a=p.split(':'),o=find(a[0],a[1]);if(o){var n={};n[k]=v;db.collection(a[0]).doc(a[1]).update(n).catch(err)}};
+ if(d.e){var a=d.e.split(':');set(a[0]+':'+a[1],a[2],t.type=='number'?+t.value:t.value)}
+ if(d.k){var a=d.k.split(':');set(a[0]+':'+a[1],a[2],t.checked)}
+ if(d.c){var n={};n[d.c]=t.value;db.doc('cfg/main').set(Object.assign({},S.cfg,n)).catch(err)}
+ if(d.s){var n={};n[d.s]=t.checked;db.doc('cfg/main').set(Object.assign({},S.cfg,n)).catch(err)}
+ if(d.p){var a=d.p.split(':');if(t.files[0])up(t.files[0]).then(function(u){set(d.p,'img',u)}).catch(err)}
+ if(t.id=='hI'&&t.files[0])up(t.files[0]).then(function(u){return db.doc('cfg/main').set(Object.assign({},S.cfg,{heroImg:u}))}).catch(err)});
+$('ab').addEventListener('click',function(e){var d=e.target.dataset,id,o;
+ if(d.x){var bt=e.target;if(bt.getAttribute('data-arm')!='1'){bt.setAttribute('data-arm','1');bt.textContent='¿SEGURO? TOCÁ DE NUEVO';setTimeout(function(){bt.removeAttribute('data-arm');bt.textContent='ELIMINAR'},4000)}else{var a=d.x.split(':');db.collection(a[0]).doc(a[1]).delete().then(function(){msg('Eliminado')}).catch(err)}}
+ if(d.rn)db.collection('offers').doc(d.rn).update({exp:Date.now()+864e5,created:Date.now()}).catch(err);
+ if(d.dp){o=find('offers',d.dp);id=uid();var c=Object.assign({},o);delete c.id;c.exp=Date.now()+864e5;c.created=Date.now();save('offers',id,c).catch(err)}
+ if(e.target.id=='dS'){var n=$('dN').value.trim();if(!n||!$('dC').value)return msg('Falta nombre o categoría');var cat=$('dC').value,go=function(u){save('dest',uid(),{cat:cat,name:n,desc:$('dD').value,img:u||'',order:+$('dO').value||0}).then(function(){cur=cat;render();msg('Destino agregado. Cerrá el panel y buscalo en Destinos, en la pestaña de esa categoría.')}).catch(err)};var f=$('dI').files[0];f?up(f).then(go).catch(err):go('')}
+ if(e.target.id=='oS'){var v=function(k){return $('o_'+k).value},n=v('name').trim();if(!n||!v('price'))return msg('Completá destino y precio');var go=function(u){save('offers',uid(),{name:n,out:v('out'),back:v('back'),nights:v('nights'),air:v('air'),bag:v('bag'),hotel:v('hotel'),price:v('price'),info:v('info'),img:u||'',created:Date.now(),exp:Date.now()+864e5}).catch(err)};var f=$('o_img').files[0];f?up(f).then(go).catch(err):go('')}
+ if(e.target.id=='cS'){var n=$('cN').value.trim();if(!n)return;save('cats',uid(),{name:n,type:$('cT').value,body:$('cB').value,menu:$('cM').checked,on:true,order:S.cats.length+1}).catch(err)}});
+/* ---- arranque ---- */
+function seed(){['Caribe','Brasil','Europa','África','Asia','Estados Unidos','Oceanía'].forEach(function(n,i){save('cats',['caribe','brasil','europa','africa','asia','eeuu','oceania'][i],{name:n,type:'cat',on:true,order:i+1}).catch(err)})}
+function listen(col){db.collection(col).onSnapshot(function(s){S[col]=s.docs.map(function(d){var x=d.data();x.id=d.id;return x});render();if(col=='cats'&&isAdmin)s.docs.forEach(function(d){if(d.id=='brasil'&&d.data().name=='Norte de Brasil')db.collection('cats').doc('brasil').update({name:'Brasil'}).catch(err)});if(col=='cats'&&isAdmin&&!s.docs.length&&!window._seed){window._seed=1;setTimeout(function(){if(!S.cats.length)seed()},2500)}})}
+function init(){
+ Promise.all([claude.use('db'),claude.use('user'),claude.use('assets')]).then(function(r){
+  db=r[0];assets=r[2];var u=r[1];
+  if(!db){return}
+  isAdmin=!!(u&&u.canEdit&&u.canEdit());if(isAdmin)$('fab').style.display='block';
+  ['cats','dest','offers'].forEach(listen);
+  db.doc('cfg/main').onSnapshot(function(s){S.cfg=s.exists?s.data():{};render()});
+ }).catch(function(){});
+}
+render();
+if(window.claude&&claude.use)init();
+})();
+</script></body></html>
